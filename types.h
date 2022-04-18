@@ -1,6 +1,11 @@
 #ifndef TYPES_H_INCLUDED
 #define TYPES_H_INCLUDED
 
+typedef enum {
+    ORDER_ASC,
+    ORDER_DESC
+} Order;
+
 typedef enum
 {
     UNKONWN=0,

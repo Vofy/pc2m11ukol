@@ -55,8 +55,7 @@ int main()
 
             add_album(new_album);
         }
-
-        if(c == 'D' || c == 'd')
+        else if(c == 'D' || c == 'd')
         {
             int index;
             printf("\nZadejte index: ");
@@ -64,15 +63,27 @@ int main()
             fflush(stdin);
             remove_album(index);
         }
-
-        if(c == 'E' || c == 'e')
+        else if(c == 'E' || c == 'e')
         {
             FILE *output = fopen("output.csv", "w");
             export_to_csv(output);
             fclose(output);
         }
+        else if(c == 'o' || c == 'O')
+        {
+            printf("\nA: Ascending, D: Descending");
+            scanf(" %c", &c);
 
-        if(c == 'P' || c == 'p')
+            if(c == 'a' || c == 'A')
+            {
+                sort_albums(ORDER_ASC);
+            }
+            else if(c == 'd' || c == 'D')
+            {
+                sort_albums(ORDER_DESC);
+            }
+        }
+        else if(c == 'P' || c == 'p')
             print_all();
 
         printf("\nA: Add, D: Delete, E: Export to CSV, P: Print, Q: Quit\n");

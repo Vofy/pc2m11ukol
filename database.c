@@ -8,6 +8,8 @@
 struct Album *head;
 struct Album *tail;
 
+struct Album *sorted;
+
 void print_all()
 {
     if(!head)
@@ -120,4 +122,47 @@ void remove_album(int index)
         if(current->next == tail)
             tail = current->next->next;
     }
+}
+
+void sortedInsert(struct Album* newnode)
+{
+    /* Special case for the head end */
+    if (sorted == NULL || sorted->rating >= newnode->rating) {
+        newnode->next = sorted;
+        sorted = newnode;
+    }
+    else {
+        struct Album* current = sorted;
+        /* Locate the node before the point of insertion
+         */
+        while (current->next != NULL
+               && current->next->rating < newnode->rating) {
+            current = current->next;
+        }
+        newnode->next = current->next;
+        current->next = newnode;
+    }
+}
+
+// function to sort a singly linked list
+// using insertion sort
+void sort_albums(Order order)
+{
+    struct Album* current = head;
+
+    // Traverse the given linked list and insert every
+    // node to sorted
+    while (current != NULL) {
+
+        // Store next for next iteration
+        struct Album* next = current->next;
+
+        // insert current in sorted linked list
+        sortedInsert(current);
+
+        // Update current
+        current = next;
+    }
+    // Update head to point to sorted linked list
+    head = sorted;
 }
