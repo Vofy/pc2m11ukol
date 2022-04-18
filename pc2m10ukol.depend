@@ -79,9 +79,9 @@
 
 1650323196 /home/vofy/pc2m11ukol/types.h
 
-1650323196 /home/vofy/pc2m11ukol/database.h
+1650324411 /home/vofy/pc2m11ukol/database.h
 
-1650323933 source:/home/vofy/pc2m11ukol/database.c
+1650324484 source:/home/vofy/pc2m11ukol/database.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -90,7 +90,7 @@
 
 1650323196 /home/vofy/pc2m11ukol/data_read.h
 
-1650324005 source:/home/vofy/pc2m11ukol/main.c
+1650324488 source:/home/vofy/pc2m11ukol/main.c
 	<stdio.h>
 	<stdlib.h>
 	"types.h"
