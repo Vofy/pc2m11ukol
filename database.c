@@ -153,25 +153,16 @@ void sorted_insert(struct Album* newnode, Order order)
     }
 }
 
-// function to sort a singly linked list
-// using insertion sort
 void sort_albums(Order order)
 {
     struct Album* current = head;
 
-    // Traverse the given linked list and insert every
-    // node to sorted
-    while (current != NULL) {
-
-        // Store next for next iteration
+    while (current != NULL)
+    {
         struct Album* next = current->next;
-
-        // insert current in sorted linked list
         sorted_insert(current, order);
-
-        // Update current
         current = next;
     }
-    // Update head to point to sorted linked list
+
     head = sorted;
 }
