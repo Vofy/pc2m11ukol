@@ -70,3 +70,35 @@
 	<string.h>
 	"types.h"
 
+1650323196 source:/home/vofy/pc2m11ukol/data_read.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"types.h"
+	"database.h"
+
+1650323196 /home/vofy/pc2m11ukol/types.h
+
+1650323196 /home/vofy/pc2m11ukol/database.h
+
+1650323933 source:/home/vofy/pc2m11ukol/database.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"types.h"
+	"data_read.h"
+
+1650323196 /home/vofy/pc2m11ukol/data_read.h
+
+1650324005 source:/home/vofy/pc2m11ukol/main.c
+	<stdio.h>
+	<stdlib.h>
+	"types.h"
+	"data_read.h"
+	"database.h"
+
+1650323196 source:/home/vofy/pc2m11ukol/types.c
+	<stdlib.h>
+	<string.h>
+	"types.h"
+

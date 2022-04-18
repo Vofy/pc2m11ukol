@@ -71,14 +71,17 @@ int main()
         }
         else if(c == 'o' || c == 'O')
         {
-            printf("\nA: Ascending, D: Descending");
+            printf("\nA: Ascending, D: Descending\n");
+            fflush(stdin);
             scanf(" %c", &c);
+            fflush(stdin);
 
             if(c == 'a' || c == 'A')
             {
                 sort_albums(ORDER_ASC);
             }
-            else if(c == 'd' || c == 'D')
+
+            if(c == 'd' || c == 'D')
             {
                 sort_albums(ORDER_DESC);
             }
@@ -86,7 +89,7 @@ int main()
         else if(c == 'P' || c == 'p')
             print_all();
 
-        printf("\nA: Add, D: Delete, E: Export to CSV, P: Print, Q: Quit\n");
+        printf("\nA: Add, D: Delete, E: Export to CSV, O: Order, P: Print, Q: Quit\n");
         scanf("%c", &c);
         fflush(stdin);
     }

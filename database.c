@@ -124,23 +124,32 @@ void remove_album(int index)
     }
 }
 
-void sortedInsert(struct Album* newnode)
+void sorted_insert(struct Album* newnode, Order order)
 {
-    /* Special case for the head end */
     if (sorted == NULL || sorted->rating >= newnode->rating) {
         newnode->next = sorted;
         sorted = newnode;
     }
     else {
-        struct Album* current = sorted;
-        /* Locate the node before the point of insertion
-         */
-        while (current->next != NULL
-               && current->next->rating < newnode->rating) {
-            current = current->next;
+        struct Album *current = sorted, *prev = NULL;
+
+        if(order == ORDER_ASC)
+        {
+            while (current->next != NULL && current->next->rating < newnode->rating) {
+                current = current->next;
+            }
+            newnode->next = current->next;
+            current->next = newnode;
         }
-        newnode->next = current->next;
-        current->next = newnode;
+        else if(order == ORDER_DESC)
+        {
+            while (current->next != NULL && current->next->rating > newnode->rating) {
+                prev = current;
+                current = current->next;
+            }
+            newnode->next = prev;
+            prev->next = newnode;
+        }
     }
 }
 
@@ -158,7 +167,7 @@ void sort_albums(Order order)
         struct Album* next = current->next;
 
         // insert current in sorted linked list
-        sortedInsert(current);
+        sorted_insert(current, order);
 
         // Update current
         current = next;
