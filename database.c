@@ -126,7 +126,7 @@ void remove_album(int index)
 
 void sort_albums(Order order)
 {
-    struct Album* index = head, *prev = NULL;
+    struct Album* index = head;
 
     while (index != NULL)
     {
@@ -171,8 +171,6 @@ void sort_albums(Order order)
             }
         }
 
-
-        prev = index; //
         index = next;
     }
 
