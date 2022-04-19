@@ -50,11 +50,11 @@ void export_to_csv(FILE *output)
     while(current)
     {
         fprintf(output, "%s;%s;%d;%s;%f\n",
-               current->name,
-               current->author,
-               current->year,
-               rev_resolve_genre(current->genre),
-               current->rating);
+                current->name,
+                current->author,
+                current->year,
+                rev_resolve_genre(current->genre),
+                current->rating);
 
         current = current->next;
     }
@@ -124,44 +124,60 @@ void remove_album(int index)
     }
 }
 
-void sorted_insert(struct Album* newnode, Order order)
+void sort_albums(Order order)
 {
-    if (sorted == NULL || sorted->rating >= newnode->rating) {
-        newnode->next = sorted;
-        sorted = newnode;
-    }
-    else {
-        struct Album *current = sorted, *prev = NULL;
+    struct Album* index = head, *prev = NULL;
+
+    while (index != NULL)
+    {
+        struct Album* next = index->next;
 
         if(order == ORDER_ASC)
         {
-            while (current->next != NULL && current->next->rating < newnode->rating) {
-                current = current->next;
+            if (sorted == NULL || sorted->rating >= index->rating)
+            {
+                index->next = sorted;
+                sorted = index;
+                printf("ASC\n");
             }
-            newnode->next = current->next;
-            current->next = newnode;
+            else
+            {
+                printf("else\n");
+                struct Album* current = sorted;
+
+                while (current->next != NULL && current->next->rating < index->rating) {
+                    current = current->next;
+                }
+
+                index->next = current->next;
+                current->next = index;
+            }
         }
         else if(order == ORDER_DESC)
         {
-            while (current->next != NULL && current->next->rating > newnode->rating) {
-                prev = current;
-                current = current->next;
+            if (sorted == NULL || sorted->rating <= index->rating)
+            {
+                index->next = sorted;
+                sorted = index;
+                printf("DESC\n");
             }
-            newnode->next = prev;
-            prev->next = newnode;
+            else
+            {
+                printf("else\n");
+                struct Album* current = sorted;
+
+                while (current->next != NULL && current->next->rating > index->rating) {
+                    current = current->next;
+                }
+
+                index->next = current->next;
+                current->next = index;
+            }
         }
-    }
-}
 
-void sort_albums(Order order)
-{
-    struct Album* current = head;
 
-    while (current != NULL)
-    {
-        struct Album* next = current->next;
-        sorted_insert(current, order);
-        current = next;
+        prev = index; //
+        index = next;
     }
 
     head = sorted;
