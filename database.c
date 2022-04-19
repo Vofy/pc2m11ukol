@@ -138,11 +138,9 @@ void sort_albums(Order order)
             {
                 index->next = sorted;
                 sorted = index;
-                printf("ASC\n");
             }
             else
             {
-                printf("else\n");
                 struct Album* current = sorted;
 
                 while (current->next != NULL && current->next->rating < index->rating) {
@@ -159,11 +157,9 @@ void sort_albums(Order order)
             {
                 index->next = sorted;
                 sorted = index;
-                printf("DESC\n");
             }
             else
             {
-                printf("else\n");
                 struct Album* current = sorted;
 
                 while (current->next != NULL && current->next->rating > index->rating) {

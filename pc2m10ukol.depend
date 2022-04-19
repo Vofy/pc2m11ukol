@@ -38,34 +38,34 @@
 
 1650224705 /home/vofy/Projects/pc2m10ukol/database.h
 
-1650304360 source:/home/vofy/Projects/pc2m11ukol/data_read.c
+1650353262 source:/home/vofy/Projects/pc2m11ukol/data_read.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"types.h"
 	"database.h"
 
-1650305802 /home/vofy/Projects/pc2m11ukol/types.h
+1650353262 /home/vofy/Projects/pc2m11ukol/types.h
 
-1650304360 /home/vofy/Projects/pc2m11ukol/database.h
+1650353262 /home/vofy/Projects/pc2m11ukol/database.h
 
-1650305769 source:/home/vofy/Projects/pc2m11ukol/database.c
+1650353262 source:/home/vofy/Projects/pc2m11ukol/database.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"types.h"
 	"data_read.h"
 
-1650304360 /home/vofy/Projects/pc2m11ukol/data_read.h
+1650353262 /home/vofy/Projects/pc2m11ukol/data_read.h
 
-1650304360 source:/home/vofy/Projects/pc2m11ukol/main.c
+1650353262 source:/home/vofy/Projects/pc2m11ukol/main.c
 	<stdio.h>
 	<stdlib.h>
 	"types.h"
 	"data_read.h"
 	"database.h"
 
-1650305797 source:/home/vofy/Projects/pc2m11ukol/types.c
+1650353262 source:/home/vofy/Projects/pc2m11ukol/types.c
 	<stdlib.h>
 	<string.h>
 	"types.h"
